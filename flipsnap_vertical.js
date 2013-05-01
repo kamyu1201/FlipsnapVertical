@@ -13,6 +13,8 @@
 /**
  * flipsnapVertical.js
  * 
+ * @url https://github.com/kamyu1201/FlipsnapVertical
+ * 
  * Licensed under the MIT License:
  * http://www.opensource.org/licenses/mit-license.php
  */
