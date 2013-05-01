@@ -1,0 +1,47 @@
+<html>
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="./flipsnap_vertical.js" ></script>
+<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+	<h2>Flipsnap Vertical Demo</h2>
+	<section>
+		<div class="fsv_up">up</div>
+		<div class="fsv_viewport">
+			<div class="flipsnapVertical">
+				<div class="fsv_item">1</div>
+				<div class="fsv_item">2</div>
+				<div class="fsv_item">3</div>
+				<div class="fsv_item">4</div>
+				<div class="fsv_item">5</div>
+				<div class="fsv_item">6</div>
+				<div class="fsv_item">7</div>
+				<div class="fsv_item">8</div>
+				<div class="fsv_item">9</div>
+				<div class="fsv_item">10</div>
+			</div>
+		</div>
+		<div class="fsv_down">down</div>
+	</section>
+<script type="text/javascript">
+	var fsv = FlipsnapVertical('.flipsnapVertical');
+	var $up = $(".fsv_up").click(function(){fsv.toPrev();});
+	var $down = $(".fsv_down").click(function(){fsv.toNext();});
+
+	fsv.element.addEventListener('fspointmove', function() {
+		if(!fsv.hasNext()){
+			$down.addClass("no_move");
+		}else{
+			$down.removeClass("no_move");
+		}
+		if(!fsv.hasPrev()){
+			$up.addClass("no_move");
+		}else{
+			$up.removeClass("no_move");
+		}
+	}, false);
+	$up.addClass("no_move");
+</script>
+</body>
+</html>
